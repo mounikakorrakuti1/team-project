@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Images</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .image-scroll-container {
+      position: relative;
+      width: 80%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .scrolling-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .scrolling-images img {
+      width: 300px;
+      height: auto;
+      margin-right: 10px;
+      border-radius: 20px; /* Curvy borders */
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .scroll-btn.left {
+      left: 10px;
+    }
+
+    .scroll-btn.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-scroll-container">
+    <button class="scroll-btn left" onclick="scrollImages('left')">&#10094;</button>
+    <div class="scrolling-images">
+      <img src="https://static.vecteezy.com/system/resources/previews/049/855/513/non_2x/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-free-photo.jpg" alt="Image 1">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/049/855/636/small/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-free-photo.jpg" alt="Image 2">
+      <img src="https://t4.ftcdn.net/jpg/08/23/33/25/360_F_823332598_Cjyy8v139PCreeIppQv0P4hNk4cVAHfT.jpg" alt="Image 3">
+      <img src="https://c4.wallpaperflare.com/wallpaper/195/916/22/nature-realistic-renders-sp34k-wallpaper-preview.jpg" alt="Image 4">
+    </div>
+    <button class="scroll-btn right" onclick="scrollImages('right')">&#10095;</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+
+    function scrollImages(direction) {
+      const container = document.querySelector('.scrolling-images');
+      const images = document.querySelectorAll('.scrolling-images img');
+      const totalImages = images.length;
+
+      if (direction === 'left') {
+        currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+      } else if (direction === 'right') {
+        currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+      }
+
+      const offset = -currentIndex * (images[0].width + 10); // 10 is the margin-right of images
+      container.style.transform = `translateX(${offset}px)`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Webpage</title>
+    <style>
+        /* Basic resets */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        /* Background image and white section styling */
+        .background {
+            background-image: url('https://zugspitze.de/Bilder/Garmisch-Classic/Sommer/Wandern/229/image-thumb__229__hero-content/Garmsich-Classic_Wanderwege_2019_Fend_8.25968c7e.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 66.6%; /* 2/3 of the page height */
+            position: relative;
+        }
+
+        /* White section (1/3 of the page) */
+        .white-section {
+            background-color: white;
+            width: 100%;
+            height: 33.3%; /* 1/3 of the page height */
+            position: relative;
+            text-align: center;
+        }
+
+        /* Navigation styling */
+        .nav {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            color: #0066cc;
+        }
+
+        /* Centered text styling */
+        .text-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .text-center .large-text {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Button styling */
+        .button {
+            background-color: lightblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #007bb5;
+        }
+
+        /* "SERVICES" Section */
+        .services {
+            font-size: 36px;
+            font-weight: bold;
+            color: black;
+            margin-top: 30px;
+        }
+
+        /* Small headings below SERVICES */
+        .headings {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            width: 30%; /* Each heading takes up 30% of the container */
+        }
+
+        /* Random content under each heading */
+        .content {
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Section -->
+    <div class="background">
+        <div class="nav">
+            <a href="#references">References</a>
+            <a href="#about">About</a>
+            <a href="#terms">Terms</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Centered Text Section -->
+        <div class="text-center">
+            <p>Hello Errbody</p>
+            <p class="large-text">YES MEL, AJMAL, CHIEN,<br>JUNNE MAYBE ANDSYOK</p>
+            <button class="button">Know Here</button>
+        </div>
+    </div>
+
+    <!-- White Section -->
+    <div class="white-section">
+        <!-- Services Text -->
+        <div class="services">
+            SERVICES
+        </div>
+
+        <!-- Small Headings Section -->
+        <div class="headings">
+            <div class="heading">
+                <p>Heading 1</p>
+                <div class="content">Random content for Heading 1. It could be any information.</div>
+            </div>
+            <div class="heading">
+                <p>Heading 2</p>
+                <div class="content">Random content for Heading 2. Another piece of information here.</div>
+            </div>
+            <div class="heading">
+                <p>Heading 3</p>
+                <div class="content">Random content for Heading 3. Something different again.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
